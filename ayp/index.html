@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- BS Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<style>
+		.card{
+			transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+			padding: 10px; 
+			cursor: pointer; 
+		}
+		.card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 10px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+		}
+		.col>a {
+			text-decoration: none;
+		}
+		.card-body>img {
+			width: 250px;
+		}
+		.card-footer, .card-body {
+			text-align: center;
+		}
+	</style>
+	<title>Acceso por SSH - VNC</title>
+</head>
+<body style="height:150px">
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="https://lab.anahuac.mx/">
+				<img src="../img/Logo_Universidad_Anahuac.svg.png" alt="Anáhuac México" style="width:40px;" class="rounded-pill">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="https://lab.anahuac.mx">Talleres</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="ayp">Algoritmos y Programación</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://lab.anahuac.mx:8822/guacamole/#/">Guacamole</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container" style="margin-top:80px">
+		<h3 class="display-3"> Acceso por VNC a lab.anahuac.mx </h3>
+	</div>
+	 
+	<div class="container my-5">
+		<div class="row">
+			<p class="display-6">Se puede entrar al servidor por lo menos de dos maneras:</p>
+			<ol>
+				<li><a href=putty-vnc.html>Mediante un cliente de SSH y otro de VNC (Virtual Network Computing), por ejemplo Putty y vncviewer</a>
+				<li><a href="https://lab.anahuac.mx/guacamole">Mediante Guacamole</a>. (Antes de emplear este sistema, por favor lea el documento de <a href="guacamole.pdf"> como usar Guacamole en lab.anahuac.mx</a>)
+				<li><a href="guacamole-con-sonido.pdf"> Guacamole y Gambas con <i><b>sonido</b></i></a>
+			</ol>
+			
+			<p class="display-6">Ventajas de emplear Guacamole:</p>
+			<ul>
+				<li>No se necesitan los clientes de SSH y VNC, es suficiente contar con un navegador que soporte HTML5.</li>
+				<li>Las conexiones de SSH y VNC son dentro del mismo servidor por lo que son mucho más estables. Si hay un fallo en la red, el sistema Guacamole se vuelve a reconectar automáticamente a las sesiones abiertas.</li>
+				<li>No es necesario configurar un protocolo, túnel, usuario, contraseña, puerto, etc. Todo esto ya está configurado previamente en el servidor.</li>
+				<li> Se puede usar incluso dispositivos móviles como celulares, tablets, etc. Es recomendable usar navegadores web sencillos, como el DuckduckGo, Yuzu Browser, Pure Browser, etc. En realidad prácticamente cualquier navegador sirve.</li>
+			</ul>
+			<p class="display-6">Desventajas de emplear Guacamole:</p>
+			<ul>
+				<li>La funcionalidad de las teclas depende del navegador que se emplee. Para las teclas con acentos se puede usar Chromium por ejemplo.</li>
+				<li>El copiar y pegar se tiene que hacer mediante una ventana intermedia del navegador, no se puede hacer directamente.</li>
+				<li>Es importante tener cuidado con la seguridad de las sesiones ya que al ser más facil de entrar y mantenerse abiertas, sino se cierran explícitamente alguien más puede usarlas indebidamente.</li>
+				<li>Por el momento si se actualiza alguna contraseña del usuario, ya no es posible entrar al sistema por Guacamole ya que es necesario solicitar al administrador del sistema que actualice los registros de Guacamole. Es decir los cambios de contraseña no se ven reflejados automáticamente en el sistema Guacamole.</li> 
+			</ul>
+			<a href="https://guacamole.apache.org/doc/gug/using-guacamole.html" >Más información de como usar Guacamole, por ejemplo copia y pegar, movimiento del ratón, teclado, etc.</a>
+			</br><b>Nota:</b> no todas las funcionalidades, <strike>como por ejemplo la transferencia de archivos, el sonido,</strike> están instaladas en el servidor.
+		</div>
+	</div>
+</body>
+</html>
